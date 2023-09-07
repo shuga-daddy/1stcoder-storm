@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --var-grey: #5e5e5e;
+    --var-dark-grey: #525253;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: yellow; */
+    padding: 0 40px;
+    box-shadow: 0 0 5px 5px grey;
+}
+
+a {
+    text-decoration: none;
+    color: var(--var-grey);
+}
+
+a:hover {
+    color: orangered;
+}
+
+.first-nav-items {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.sign-up-btn {
+    display: block;
+    font-weight: 600;
+    width: fit-content;
+    height: fit-content;
+    padding: 15px 25px;
+    border-radius: 50px;
+    background-color: rgb(205, 202, 202);
+}
+
+.sign-up-btn:hover {
+    background-color: transparent;
+    color: var(--var-dark-grey);
+    border: 2px solid var(--var-dark-grey);
+}
+
+
+
+
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: grey;
+    transition: all .5s;
+}
+
+.nav2 {
+    display: none;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    background-color: ghostwhite;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+
+
+.nav2 .sign-up-btn {
+    width: 100%;
+    text-align: center;
+}
+
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000000000000000;
+    width: 100%;
+    height: 100vh;
+    inset: 0px;
+    background-color: blue;
+    transition: 1s;
+}
+
+.spinner {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-top: 5px solid white;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+@media  screen and (max-width: 950px) {
+    /* body {
+        background-color: red;
+    } */
+
+    .nav-links, .nav-buttons {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .hamburger-menu.active .first-span{
+        transform: rotate(40deg) translateY(8px);
+    }
+    .hamburger-menu.active .sec-span{
+        transform: rotate(-40deg) translateY(-8px);
+    }
+
+    .nav2.show {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 600px){
+    nav {
+        padding: 0 20px;
+    }
+}
